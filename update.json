@@ -1,1 +1,8 @@
-
+{
+	"name": "Aura Core",
+	"version": "Alpha-0.1",
+	"changelog": [
+		"hello world"
+	],
+	"download": "https://minecraft.curseforge.com/projects/forge-your-world"
+}
