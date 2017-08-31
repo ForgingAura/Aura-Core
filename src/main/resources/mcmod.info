@@ -1,0 +1,15 @@
+[
+{
+  "modid": "auracore",
+  "name": "AuraCore",
+  "description": "The core library for ForgingAura's mods.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["AlasDiablo"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": []
+}
+]

@@ -1,0 +1,64 @@
+energy.utils.repeat_support=A energy support of type %s has already been registered - SKIPPING
+energy.utils.support_success=Successfully registered energy support %s
+
+energy.unit.repeat_registration=An energy unit of type %s has already been registered - SKIPPING
+energy.unit.registration_success=Successfully registered energy unit %s
+energy.unit.name=Name: %s
+energy.unit.suffix=Suffix: %s
+energy.unit.multiplier=Multiplier: %
+
+energy.unit.forge_energy.name=Forge Energy
+energy.unit.forge_energy.suffix=FE
+energy.unit.redstone_flux.name=Redstone Flux
+energy.unit.redstone_flux.suffix=RF
+energy.unit.tesla.name=Tesla
+energy.unit.tesla.suffix=T
+energy.unit.joules.name=Joules
+energy.unit.joules.suffix=J
+energy.unit.minecraft_joules.name=Minecraft Joules
+energy.unit.minecraft_joules.suffix=MJ
+energy.unit.energy_unit.name=Energy Unit
+energy.unit.energy_unit.suffix=EU
+
+energy.container.energy=Energy
+energy.container.capacity=Capacity
+energy.container.max_input=Max Input
+energy.container.max_output=Max Output
+
+gui.config.main_title=CJCore Configuration
+
+gui.config.category.energy=Energy Configuration
+gui.config.category.energy.tooltip=Everything to do with energy
+gui.config.energy.default_energy_unit.name=Default Energy Unit
+gui.config.energy.default_energy_unit.comment=The energy unit that you will normally see
+gui.config.energy.multimeter_offset_x.name=Multimeter Offset X
+gui.config.energy.multimeter_offset_x.comment=The offset from the left hand side when using the Multimeter
+gui.config.energy.multimeter_offset_y.name=Multimeter Offset Y
+gui.config.energy.multimeter_offset_y.comment=The offset from the bottom when using the Multimeter
+gui.config.energy.multimeter_width.name=Multimeter Width
+gui.config.energy.multimeter_width.comment=The width of the Multimeter gui
+gui.config.energy.multimeter_height.name=Multimeter Height
+gui.config.energy.multimeter_height.comment=The height of the Multimeter gui
+gui.config.energy.multimeter_show_capacity.name=Show Multimeter Capacity
+gui.config.energy.multimeter_show_capacity.comment=Whether or not to show the capacity when using the multimeter
+gui.config.energy.multimeter_simplify_energy.name=Simplify Energy Displayed For Multimeter
+gui.config.energy.multimeter_simplify_energy.comment=Whether or not to simplify the way the energy is displayed when using the multimeter
+
+gui.config.category.update_checker=Update Checkers
+gui.config.category.update_checker.tooltip=Disable any of the update checkers which use CJCore
+gui.config.update_checker.enabled.comment=Whether this mod's update checker is disabled
+
+item.multimeter.name=Multimeter
+item.multimeter.tooltip.blockpos=Targeting block %s at %s %s %s
+item.multimeter.tooltip=The multimeter allows users to see energy inside of any block without actually opening their gui! Sneak right click on a block to set the target block so the multimeter will only show the energy inside of that block. By right clicking air, the target block will reset
+
+update.ready=There is an update for %s available!
+update.version=Current Version: %s, newest Version: %s
+update.download=Click To Download
+update.changelog=Hover to show change log
+
+command.tileentity.usage=/tileenitty <x> <y> <z> energy get [side] or /tileenitty <x> <y> <z> energy <set:give:take> <energy> <unit> [side]
+command.tileentity.nosupport=There is no support for the tile entity at position %s %s %s
+command.tileentity.notake=This tile entity does not allow energy to be taken
+command.tileentity.nogive=This tile entity does not allow energy to be given
+command.tileentity.noset=This tile entity does not allow energy to be set
