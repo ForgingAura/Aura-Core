@@ -95,7 +95,7 @@ public class AuraConfig {
      * For use in {@link AuraCore} only
      */
     public static void preInit() {
-        File configFile = new File(Loader.instance().getConfigDir(), "CJCore.cfg");
+        File configFile = new File(Loader.instance().getConfigDir(), "AuraCore.cfg");
         config = new Configuration(configFile);
         syncFromFile();
     }
