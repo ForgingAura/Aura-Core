@@ -1,0 +1,5 @@
+-1.1
+change Some code (AlasDiablo)
+------------------------------------------------------------------
+-1.0
+add VersionCkecker/UpdateChecker (ALasDiablo)

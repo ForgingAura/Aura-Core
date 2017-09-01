@@ -1,8 +1,8 @@
 {
 	"name": "Aura Core",
-	"version": "1.0",
+	"version": "1.1",
 	"changelog": [
-		"hello world"
+		"change Some code"
 	],
-	"download": "https://minecraft.curseforge.com/projects/forge-your-world"
+	"download": "https://minecraft.curseforge.com/projects/auracore"
 }
