@@ -1,8 +1,8 @@
 {
 	"name": "Aura Core",
-	"version": "1.1",
+	"version": "beta-2.0",
 	"changelog": [
-		"change Some code"
+		"Welcome to beta 2.0", "The New Start", "Aura Core is rename by Forge Your World Core"
 	],
-	"download": "https://minecraft.curseforge.com/projects/auracore"
+	"download": "https://minecraft.curseforge.com/projects/forge-your-world-core"
 }
