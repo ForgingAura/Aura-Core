@@ -1,6 +1,7 @@
-package alasdiablo.core;
+package forgingaura.forgeyourworld.core;
 
-import alasdiablo.core.config.AuraConfig;
+import forgingaura.forgeyourworld.core.config.ForgeYourWorldConfig;
+import forgingaura.forgeyourworld.core.proxy.Common;
 import net.minecraftforge.fml.common.*;
 import net.minecraftforge.fml.common.versioning.ArtifactVersion;
 import org.apache.logging.log4j.LogManager;
@@ -8,7 +9,6 @@ import org.apache.logging.log4j.Logger;
 
 import net.minecraftforge.fml.common.Mod.CustomProperty;
 import net.minecraftforge.fml.common.Mod.Instance;
-import alasdiablo.core.proxy.Common;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -20,25 +20,25 @@ import java.util.List;
 /**
  * Created by AlasDiablo on 31/08/2017.
  */
-@Mod(modid = AuraCore.MODID, name = AuraCore.NAME, version = AuraCore.VERSION, acceptedMinecraftVersions = AuraCore.ACCEPTED_VERSION, useMetadata = true,
+@Mod(modid = ForgeYourWorldCore.MODID, name = ForgeYourWorldCore.NAME, version = ForgeYourWorldCore.VERSION, acceptedMinecraftVersions = ForgeYourWorldCore.ACCEPTED_VERSION, useMetadata = true,
         customProperties = { @CustomProperty(k = "useVersionChecker", v = "true") })
-public class AuraCore {
+public class ForgeYourWorldCore {
 
     public static final List<String> DEPENDANTS = new ArrayList<String>();
 
     @Instance
-    public static AuraCore instance;
+    public static ForgeYourWorldCore instance;
 
-    public static final String MODID = "auracore";
-    public static final String NAME = "Aura Core";
-    public static final String VERSION = "1.0";
+    public static final String MODID = "forgeyourworldcore";
+    public static final String NAME = "Forge Your World Core";
+    public static final String VERSION = "beta-2.0";
     public static final String ACCEPTED_VERSION = "[1.11,1.11.2]";
-    public static final String CLIENT_PROXY_CLASSE = "alasdiablo.core.proxy.Client";
-    public static final String SERVER_PROXY_CLASSE = "alasdiablo.core.proxy.Server";
+    public static final String CLIENT_PROXY_CLASSE = "forgingaura.forgeyourworld.core.proxy.Client";
+    public static final String SERVER_PROXY_CLASSE = "forgingaura.forgeyourworld.core.proxy.Server";
     public static final Logger logger = LogManager.getFormatterLogger(NAME);
 
     private static void updateDependants() {
-        AuraConfig.UPDATE_CHECKER_MODS.put(MODID, true);
+        ForgeYourWorldConfig.UPDATE_CHECKER_MODS.put(MODID, true);
         for (ModContainer mod : Loader.instance().getActiveModList()) {
             for (ArtifactVersion version : mod.getDependencies()) {
                 if (version.getLabel().equals(MODID)) {
@@ -46,8 +46,8 @@ public class AuraCore {
                         DEPENDANTS.add(mod.getModId());
                         if (mod.getCustomModProperties().containsKey("useVersionChecker")) {
                             if (Boolean.valueOf(mod.getCustomModProperties().get("useVersionChecker"))) {
-                                if (!AuraConfig.UPDATE_CHECKER_MODS.containsKey(mod.getModId())) {
-                                    AuraConfig.UPDATE_CHECKER_MODS.put(mod.getModId(), true);
+                                if (!ForgeYourWorldConfig.UPDATE_CHECKER_MODS.containsKey(mod.getModId())) {
+                                    ForgeYourWorldConfig.UPDATE_CHECKER_MODS.put(mod.getModId(), true);
                                 }
                             }
                         } else {
@@ -63,8 +63,8 @@ public class AuraCore {
                         DEPENDANTS.add(mod.getModId());
                         if (mod.getCustomModProperties().containsKey("useVersionChecker")) {
                             if (Boolean.valueOf(mod.getCustomModProperties().get("useVersionChecker"))) {
-                                if (!AuraConfig.UPDATE_CHECKER_MODS.containsKey(mod.getModId())) {
-                                    AuraConfig.UPDATE_CHECKER_MODS.put(mod.getModId(), true);
+                                if (!ForgeYourWorldConfig.UPDATE_CHECKER_MODS.containsKey(mod.getModId())) {
+                                    ForgeYourWorldConfig.UPDATE_CHECKER_MODS.put(mod.getModId(), true);
                                 }
                             }
                         } else {
@@ -76,34 +76,34 @@ public class AuraCore {
             }
         }
         DEPENDANTS.forEach(mod -> {
-            AuraCore.logger.info("Found dependant: " + mod);
+            ForgeYourWorldCore.logger.info("Found dependant: " + mod);
         });
-        AuraConfig.UPDATE_CHECKER_MODS.forEach((key, value) -> {
-            AuraCore.logger
+        ForgeYourWorldConfig.UPDATE_CHECKER_MODS.forEach((key, value) -> {
+            ForgeYourWorldCore.logger
                     .info("Mod " + key + " says it has a version checker!");
         });
     }
 
-    @SidedProxy(clientSide = AuraCore.CLIENT_PROXY_CLASSE, serverSide = AuraCore.SERVER_PROXY_CLASSE)
+    @SidedProxy(clientSide = ForgeYourWorldCore.CLIENT_PROXY_CLASSE, serverSide = ForgeYourWorldCore.SERVER_PROXY_CLASSE)
     public static Common proxy;
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         updateDependants();
-        AuraConfig.preInit();
+        ForgeYourWorldConfig.preInit();
         proxy.preInit();
-        System.out.println("Pre Initialization of AuraCore Done");
+        System.out.println("Pre Initialization of Forge Your World Core Done");
     }
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
         proxy.init();
-        System.out.println("Initialization of AuraCore Done");
+        System.out.println("Initialization of Forge Your World Core Done");
     }
 
     @EventHandler
     public void postInit(FMLPostInitializationEvent event) {
-        System.out.println("Post Initialization of AuraCore Done");
+        System.out.println("Post Initialization of Forge Your World Core Done");
     }
 
 }

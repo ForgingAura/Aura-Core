@@ -1,9 +1,8 @@
 [
 {
-  "modid": "auracore",
-  "name": "AuraCore",
+  "modid": "forgeyourworldcore",
+  "name": "Forge Your World Core",
   "description": "The core library for ForgingAura's mods.",
-  "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",

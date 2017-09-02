@@ -1,4 +1,4 @@
-package alasdiablo.core.proxy;
+package forgingaura.forgeyourworld.core.proxy;
 
 /**
  * Created by AlasDiablo on 31/08/2017.

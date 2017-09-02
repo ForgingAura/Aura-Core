@@ -1,15 +1,9 @@
-package alasdiablo.core.util;
+package forgingaura.forgeyourworld.core.util;
 
-import java.awt.event.ActionEvent;
-import java.beans.PropertyChangeListener;
 import java.io.InputStreamReader;
-import java.lang.reflect.Field;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-
-import javax.swing.Action;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -17,8 +11,8 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.gson.stream.JsonReader;
 
-import alasdiablo.core.AuraCore;
-import alasdiablo.core.config.AuraConfig;
+import forgingaura.forgeyourworld.core.ForgeYourWorldCore;
+import forgingaura.forgeyourworld.core.config.ForgeYourWorldConfig;
 import joptsimple.internal.Strings;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
@@ -35,12 +29,12 @@ import net.minecraft.util.text.event.HoverEvent;
  * @author CJMinecraft
  *
  */
-public class UpdateChecker {
+public class VersionChecker {
 
     /**
      * The URL for the CJCore update json file
      */
-    public static final String auracoreURL = "https://raw.githubusercontent.com/ForgingAura/Aura-Core/master/update.json";
+    public static final String forgeyourworldcoreURL = "https://raw.githubusercontent.com/ForgingAura/Aura-Core/master/update.json";
 
     /**
      * States whether an update is available using the update json file
@@ -61,7 +55,7 @@ public class UpdateChecker {
             if (!version.equals(currentVersion))
                 return true;
         } catch (Exception e) {
-            AuraCore.logger.catching(e);
+            ForgeYourWorldCore.logger.catching(e);
         }
         return false;
     }
@@ -80,7 +74,7 @@ public class UpdateChecker {
      *            The player to send the messages to
      */
     public static void checkForUpdate(String url, String modid, String currentVersion, EntityPlayer player) {
-        if (!AuraConfig.UPDATE_CHECKER_MODS.containsKey(modid) || !AuraConfig.UPDATE_CHECKER_MODS.get(modid))
+        if (!ForgeYourWorldConfig.UPDATE_CHECKER_MODS.containsKey(modid) || !ForgeYourWorldConfig.UPDATE_CHECKER_MODS.get(modid))
             return;
         String version = "";
         String name = "";
@@ -105,8 +99,8 @@ public class UpdateChecker {
                     downloadURL = jo.get("download").getAsString();
             }
         } catch (Exception e) {
-            AuraCore.logger.info("Error reading update url: " + url);
-            AuraCore.logger.catching(e);
+            ForgeYourWorldCore.logger.info("Error reading update url: " + url);
+            ForgeYourWorldCore.logger.catching(e);
             return;
         }
         if (updateRequired) {

@@ -1,4 +1,4 @@
-package alasdiablo.core.config;
+package forgingaura.forgeyourworld.core.config;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -6,10 +6,10 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
+import forgingaura.forgeyourworld.core.ForgeYourWorldCore;
 import org.apache.commons.lang3.tuple.Pair;
 
-import alasdiablo.core.AuraCore;
-import alasdiablo.core.proxy.Client;
+import forgingaura.forgeyourworld.core.proxy.Client;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.config.Property;
@@ -19,12 +19,10 @@ import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-import static alasdiablo.core.config.AuraConfig.syncFromGUI;
-
 /**
  * Created by AlasDiablo on 31/08/2017.
  */
-public class AuraConfig {
+public class ForgeYourWorldConfig {
 
 
     /**
@@ -92,10 +90,10 @@ public class AuraConfig {
     private static Configuration config = null;
 
     /**
-     * For use in {@link AuraCore} only
+     * For use in {@link ForgeYourWorldCore} only
      */
     public static void preInit() {
-        File configFile = new File(Loader.instance().getConfigDir(), "AuraCore.cfg");
+        File configFile = new File(Loader.instance().getConfigDir(), "ForgeYourWorldCore.cfg");
         config = new Configuration(configFile);
         syncFromFile();
     }
@@ -281,7 +279,7 @@ public class AuraConfig {
 
         @SubscribeEvent(priority = EventPriority.NORMAL)
         public void onEvent(ConfigChangedEvent.OnConfigChangedEvent event) {
-            if (AuraCore.MODID.equalsIgnoreCase(event.getModID())) {
+            if (ForgeYourWorldCore.MODID.equalsIgnoreCase(event.getModID())) {
                 syncFromGUI();
             }
         }
